@@ -2,7 +2,7 @@ import 'package:ditonton/common/state_enum.dart';
 import 'package:ditonton/domain/usecases/search_tv.dart';
 import 'package:flutter/material.dart';
 
-import '../../domain/entities/tv.dart';
+import '../../domain/entities/tv/tv.dart';
 
 class TvSearchNotifier extends ChangeNotifier {
   final SearchTv searchTv;
@@ -18,7 +18,7 @@ class TvSearchNotifier extends ChangeNotifier {
   String _message = "";
   String get message => _message;
 
-  Future<void> fetchMovieSearch(String query) async {
+  Future<void> fetchTvSearch(String query) async {
     _state = RequestState.Loading;
     notifyListeners();
     final result = await searchTv.execute(query);

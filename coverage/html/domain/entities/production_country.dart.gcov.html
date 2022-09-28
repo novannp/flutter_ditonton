@@ -32,12 +32,12 @@
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntry">1</td>
-            <td class="headerCovTableEntry">1</td>
-            <td class="headerCovTableEntryHi">100.0 %</td>
+            <td class="headerCovTableEntry">5</td>
+            <td class="headerCovTableEntryLo">20.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-09-15 15:54:32</td>
+            <td class="headerValue">2022-09-16 15:39:45</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">0</td>
@@ -60,15 +60,23 @@
       <td>
 <pre class="sourceHeading">          Line data    Source code</pre>
 <pre class="source">
-<a name="1"><span class="lineNum">       1 </span>            : class ProductionCountry {</a>
-<a name="2"><span class="lineNum">       2 </span><span class="lineCov">          2 :   ProductionCountry({</span></a>
-<a name="3"><span class="lineNum">       3 </span>            :     required this.iso31661,</a>
-<a name="4"><span class="lineNum">       4 </span>            :     required this.name,</a>
-<a name="5"><span class="lineNum">       5 </span>            :   });</a>
-<a name="6"><span class="lineNum">       6 </span>            : </a>
-<a name="7"><span class="lineNum">       7 </span>            :   final String iso31661;</a>
-<a name="8"><span class="lineNum">       8 </span>            :   final String name;</a>
-<a name="9"><span class="lineNum">       9 </span>            : }</a>
+<a name="1"><span class="lineNum">       1 </span>            : import 'package:equatable/equatable.dart';</a>
+<a name="2"><span class="lineNum">       2 </span>            : </a>
+<a name="3"><span class="lineNum">       3 </span>            : class ProductionCountry extends Equatable {</a>
+<a name="4"><span class="lineNum">       4 </span><span class="lineCov">          6 :   ProductionCountry({</span></a>
+<a name="5"><span class="lineNum">       5 </span>            :     required this.iso31661,</a>
+<a name="6"><span class="lineNum">       6 </span>            :     required this.name,</a>
+<a name="7"><span class="lineNum">       7 </span>            :   });</a>
+<a name="8"><span class="lineNum">       8 </span>            : </a>
+<a name="9"><span class="lineNum">       9 </span>            :   final String iso31661;</a>
+<a name="10"><span class="lineNum">      10 </span>            :   final String name;</a>
+<a name="11"><span class="lineNum">      11 </span>            : </a>
+<a name="12"><span class="lineNum">      12 </span><span class="lineNoCov">          0 :   @override</span></a>
+<a name="13"><span class="lineNum">      13 </span><span class="lineNoCov">          0 :   List&lt;Object?&gt; get props =&gt; [</span></a>
+<a name="14"><span class="lineNum">      14 </span><span class="lineNoCov">          0 :         iso31661,</span></a>
+<a name="15"><span class="lineNum">      15 </span><span class="lineNoCov">          0 :         name,</span></a>
+<a name="16"><span class="lineNum">      16 </span>            :       ];</a>
+<a name="17"><span class="lineNum">      17 </span>            : }</a>
 </pre>
       </td>
     </tr>

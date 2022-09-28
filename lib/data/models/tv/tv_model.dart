@@ -1,6 +1,5 @@
+import 'package:ditonton/domain/entities/tv/tv.dart';
 import 'package:equatable/equatable.dart';
-
-import '../../domain/entities/tv.dart';
 
 class TvModel extends Equatable {
   TvModel({
@@ -35,7 +34,9 @@ class TvModel extends Equatable {
 
   factory TvModel.fromJson(Map<String, dynamic> json) => TvModel(
         backdropPath: json["backdrop_path"],
-        firstAirDate: DateTime.parse(json["first_air_date"]),
+        firstAirDate: json['first_air_data'] == ''
+            ? DateTime.parse(json["first_air_date"])
+            : DateTime.parse('2000-09-11 11:11:11.591918'),
         genreIds: List<int>.from(json["genre_ids"].map((x) => x)),
         id: json["id"],
         name: json["name"],

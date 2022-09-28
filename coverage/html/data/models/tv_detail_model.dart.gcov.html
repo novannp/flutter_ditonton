@@ -31,13 +31,13 @@
             <td class="headerValue">lcov.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntry">73</td>
             <td class="headerCovTableEntry">105</td>
-            <td class="headerCovTableEntryLo">69.5 %</td>
+            <td class="headerCovTableEntry">105</td>
+            <td class="headerCovTableEntryHi">100.0 %</td>
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2022-09-15 15:54:32</td>
+            <td class="headerValue">2022-09-16 15:39:45</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">0</td>
@@ -74,7 +74,7 @@
 <a name="12"><span class="lineNum">      12 </span>            : import 'package:equatable/equatable.dart';</a>
 <a name="13"><span class="lineNum">      13 </span>            : </a>
 <a name="14"><span class="lineNum">      14 </span>            : class TvDetailResponse extends Equatable {</a>
-<a name="15"><span class="lineNum">      15 </span><span class="lineCov">          1 :   TvDetailResponse({</span></a>
+<a name="15"><span class="lineNum">      15 </span><span class="lineCov">          2 :   TvDetailResponse({</span></a>
 <a name="16"><span class="lineNum">      16 </span>            :     required this.adult,</a>
 <a name="17"><span class="lineNum">      17 </span>            :     required this.backdropPath,</a>
 <a name="18"><span class="lineNum">      18 </span>            :     required this.createdBy,</a>
@@ -183,39 +183,39 @@
 <a name="121"><span class="lineNum">     121 </span><span class="lineCov">          1 :         voteCount: json[&quot;vote_count&quot;],</span></a>
 <a name="122"><span class="lineNum">     122 </span>            :       );</a>
 <a name="123"><span class="lineNum">     123 </span>            : </a>
-<a name="124"><span class="lineNum">     124 </span><span class="lineNoCov">          0 :   TvDetail toEntity() {</span></a>
-<a name="125"><span class="lineNum">     125 </span><span class="lineNoCov">          0 :     return TvDetail(</span></a>
-<a name="126"><span class="lineNum">     126 </span><span class="lineNoCov">          0 :       adult: this.adult,</span></a>
-<a name="127"><span class="lineNum">     127 </span><span class="lineNoCov">          0 :       backdropPath: this.backdropPath,</span></a>
-<a name="128"><span class="lineNum">     128 </span><span class="lineNoCov">          0 :       createdBy: this.createdBy.map((e) =&gt; e.toEntity()).toList(),</span></a>
-<a name="129"><span class="lineNum">     129 </span><span class="lineNoCov">          0 :       episodeRunTime: episodeRunTime,</span></a>
-<a name="130"><span class="lineNum">     130 </span><span class="lineNoCov">          0 :       firstAirDate: firstAirDate,</span></a>
-<a name="131"><span class="lineNum">     131 </span><span class="lineNoCov">          0 :       genres: genres.map((e) =&gt; e.toEntity()).toList(),</span></a>
-<a name="132"><span class="lineNum">     132 </span><span class="lineNoCov">          0 :       homepage: homepage,</span></a>
-<a name="133"><span class="lineNum">     133 </span><span class="lineNoCov">          0 :       id: id,</span></a>
-<a name="134"><span class="lineNum">     134 </span><span class="lineNoCov">          0 :       inProduction: inProduction,</span></a>
-<a name="135"><span class="lineNum">     135 </span><span class="lineNoCov">          0 :       languages: languages,</span></a>
-<a name="136"><span class="lineNum">     136 </span><span class="lineNoCov">          0 :       lastAirDate: lastAirDate,</span></a>
-<a name="137"><span class="lineNum">     137 </span><span class="lineNoCov">          0 :       lastEpisodeToAir: lastEpisodeToAir!.toEntity(),</span></a>
-<a name="138"><span class="lineNum">     138 </span><span class="lineNoCov">          0 :       name: name,</span></a>
-<a name="139"><span class="lineNum">     139 </span><span class="lineNoCov">          0 :       nextEpisodeToAir: nextEpisodeToAir?.toEntity(),</span></a>
-<a name="140"><span class="lineNum">     140 </span><span class="lineNoCov">          0 :       numberOfEpisodes: numberOfEpisodes,</span></a>
-<a name="141"><span class="lineNum">     141 </span><span class="lineNoCov">          0 :       numberOfSeasons: numberOfSeasons,</span></a>
-<a name="142"><span class="lineNum">     142 </span><span class="lineNoCov">          0 :       originCountry: originCountry,</span></a>
-<a name="143"><span class="lineNum">     143 </span><span class="lineNoCov">          0 :       originalLanguage: originalLanguage,</span></a>
-<a name="144"><span class="lineNum">     144 </span><span class="lineNoCov">          0 :       originalName: originalName,</span></a>
-<a name="145"><span class="lineNum">     145 </span><span class="lineNoCov">          0 :       overview: overview,</span></a>
-<a name="146"><span class="lineNum">     146 </span><span class="lineNoCov">          0 :       popularity: popularity,</span></a>
-<a name="147"><span class="lineNum">     147 </span><span class="lineNoCov">          0 :       posterPath: posterPath,</span></a>
+<a name="124"><span class="lineNum">     124 </span><span class="lineCov">          1 :   TvDetail toEntity() {</span></a>
+<a name="125"><span class="lineNum">     125 </span><span class="lineCov">          1 :     return TvDetail(</span></a>
+<a name="126"><span class="lineNum">     126 </span><span class="lineCov">          1 :       adult: this.adult,</span></a>
+<a name="127"><span class="lineNum">     127 </span><span class="lineCov">          1 :       backdropPath: this.backdropPath,</span></a>
+<a name="128"><span class="lineNum">     128 </span><span class="lineCov">          5 :       createdBy: this.createdBy.map((e) =&gt; e.toEntity()).toList(),</span></a>
+<a name="129"><span class="lineNum">     129 </span><span class="lineCov">          1 :       episodeRunTime: episodeRunTime,</span></a>
+<a name="130"><span class="lineNum">     130 </span><span class="lineCov">          1 :       firstAirDate: firstAirDate,</span></a>
+<a name="131"><span class="lineNum">     131 </span><span class="lineCov">          5 :       genres: genres.map((e) =&gt; e.toEntity()).toList(),</span></a>
+<a name="132"><span class="lineNum">     132 </span><span class="lineCov">          1 :       homepage: homepage,</span></a>
+<a name="133"><span class="lineNum">     133 </span><span class="lineCov">          1 :       id: id,</span></a>
+<a name="134"><span class="lineNum">     134 </span><span class="lineCov">          1 :       inProduction: inProduction,</span></a>
+<a name="135"><span class="lineNum">     135 </span><span class="lineCov">          1 :       languages: languages,</span></a>
+<a name="136"><span class="lineNum">     136 </span><span class="lineCov">          1 :       lastAirDate: lastAirDate,</span></a>
+<a name="137"><span class="lineNum">     137 </span><span class="lineCov">          2 :       lastEpisodeToAir: lastEpisodeToAir!.toEntity(),</span></a>
+<a name="138"><span class="lineNum">     138 </span><span class="lineCov">          1 :       name: name,</span></a>
+<a name="139"><span class="lineNum">     139 </span><span class="lineCov">          2 :       nextEpisodeToAir: nextEpisodeToAir?.toEntity(),</span></a>
+<a name="140"><span class="lineNum">     140 </span><span class="lineCov">          1 :       numberOfEpisodes: numberOfEpisodes,</span></a>
+<a name="141"><span class="lineNum">     141 </span><span class="lineCov">          1 :       numberOfSeasons: numberOfSeasons,</span></a>
+<a name="142"><span class="lineNum">     142 </span><span class="lineCov">          1 :       originCountry: originCountry,</span></a>
+<a name="143"><span class="lineNum">     143 </span><span class="lineCov">          1 :       originalLanguage: originalLanguage,</span></a>
+<a name="144"><span class="lineNum">     144 </span><span class="lineCov">          1 :       originalName: originalName,</span></a>
+<a name="145"><span class="lineNum">     145 </span><span class="lineCov">          1 :       overview: overview,</span></a>
+<a name="146"><span class="lineNum">     146 </span><span class="lineCov">          1 :       popularity: popularity,</span></a>
+<a name="147"><span class="lineNum">     147 </span><span class="lineCov">          1 :       posterPath: posterPath,</span></a>
 <a name="148"><span class="lineNum">     148 </span>            :       productionCountries:</a>
-<a name="149"><span class="lineNum">     149 </span><span class="lineNoCov">          0 :           productionCountries.map((e) =&gt; e.toEntity()).toList(),</span></a>
-<a name="150"><span class="lineNum">     150 </span><span class="lineNoCov">          0 :       seasons: seasons.map((e) =&gt; e.toEntity()).toList(),</span></a>
-<a name="151"><span class="lineNum">     151 </span><span class="lineNoCov">          0 :       spokenLanguages: this.spokenLanguages.map((e) =&gt; e.toEntity()).toList(),</span></a>
-<a name="152"><span class="lineNum">     152 </span><span class="lineNoCov">          0 :       status: status,</span></a>
-<a name="153"><span class="lineNum">     153 </span><span class="lineNoCov">          0 :       tagline: tagline,</span></a>
-<a name="154"><span class="lineNum">     154 </span><span class="lineNoCov">          0 :       type: type,</span></a>
-<a name="155"><span class="lineNum">     155 </span><span class="lineNoCov">          0 :       voteAverage: voteAverage,</span></a>
-<a name="156"><span class="lineNum">     156 </span><span class="lineNoCov">          0 :       voteCount: voteCount,</span></a>
+<a name="149"><span class="lineNum">     149 </span><span class="lineCov">          5 :           productionCountries.map((e) =&gt; e.toEntity()).toList(),</span></a>
+<a name="150"><span class="lineNum">     150 </span><span class="lineCov">          5 :       seasons: seasons.map((e) =&gt; e.toEntity()).toList(),</span></a>
+<a name="151"><span class="lineNum">     151 </span><span class="lineCov">          5 :       spokenLanguages: this.spokenLanguages.map((e) =&gt; e.toEntity()).toList(),</span></a>
+<a name="152"><span class="lineNum">     152 </span><span class="lineCov">          1 :       status: status,</span></a>
+<a name="153"><span class="lineNum">     153 </span><span class="lineCov">          1 :       tagline: tagline,</span></a>
+<a name="154"><span class="lineNum">     154 </span><span class="lineCov">          1 :       type: type,</span></a>
+<a name="155"><span class="lineNum">     155 </span><span class="lineCov">          1 :       voteAverage: voteAverage,</span></a>
+<a name="156"><span class="lineNum">     156 </span><span class="lineCov">          1 :       voteCount: voteCount,</span></a>
 <a name="157"><span class="lineNum">     157 </span>            :     );</a>
 <a name="158"><span class="lineNum">     158 </span>            :   }</a>
 <a name="159"><span class="lineNum">     159 </span>            : </a>

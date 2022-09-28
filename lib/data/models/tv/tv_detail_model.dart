@@ -2,13 +2,14 @@
 //
 //     final tvDetailResponse = tvDetailResponseFromJson(jsonString);
 
-import 'package:ditonton/data/models/created_by_model.dart';
 import 'package:ditonton/data/models/genre_model.dart';
-import 'package:ditonton/data/models/production_coutry_model.dart';
-import 'package:ditonton/data/models/season_model.dart';
-import 'package:ditonton/data/models/spoken_language_model.dart';
-import 'package:ditonton/data/models/te_episode_to_air_model.dart';
-import 'package:ditonton/domain/entities/tv_detail.dart';
+import 'package:ditonton/data/models/tv/created_by_model.dart';
+import 'package:ditonton/data/models/tv/production_coutry_model.dart';
+import 'package:ditonton/data/models/tv/season_model.dart';
+import 'package:ditonton/data/models/tv/spoken_language_model.dart';
+import 'package:ditonton/data/models/tv/te_episode_to_air_model.dart';
+
+import 'package:ditonton/domain/entities/tv/tv_detail.dart';
 import 'package:equatable/equatable.dart';
 
 class TvDetailResponse extends Equatable {

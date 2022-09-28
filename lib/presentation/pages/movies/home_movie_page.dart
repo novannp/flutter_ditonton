@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ditonton/common/constants.dart';
-import 'package:ditonton/domain/entities/movie.dart';
+import 'package:ditonton/domain/entities/movie/movie.dart';
 import 'package:ditonton/presentation/pages/about_page.dart';
 import 'package:ditonton/presentation/pages/movies/movie_detail_page.dart';
 import 'package:ditonton/presentation/pages/movies/top_rated_movies_page.dart';
@@ -29,10 +29,13 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
           ..fetchTopRatedMovies());
   }
 
+  final scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: scaffoldKey,
       drawer: Drawer(
+        key: Key('drawer'),
         child: Column(
           children: [
             UserAccountsDrawerHeader(
@@ -53,7 +56,8 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
               },
             ),
             ListTile(
-              leading: Icon(Icons.movie),
+              leading: Icon(Icons.tv),
+              key: Key('tvseries_btn'),
               title: Text('TV Series'),
               onTap: () {
                 Navigator.pushNamed(context, '/home-tv');
@@ -93,9 +97,17 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                'Now Playing',
-                style: kHeading6,
+              Row(
+                children: [
+                  Icon(
+                    Icons.play_arrow,
+                    color: Colors.amber,
+                  ),
+                  Text(
+                    'Now Playing',
+                    style: kHeading6,
+                  ),
+                ],
               ),
               Consumer<MovieListNotifier>(builder: (context, data, child) {
                 final state = data.nowPlayingState;
@@ -110,6 +122,7 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
                 }
               }),
               _buildSubHeading(
+                icon: Icon(Icons.star, color: Colors.amber),
                 title: 'Popular',
                 onTap: () =>
                     Navigator.pushNamed(context, PopularMoviesPage.ROUTE_NAME),
@@ -127,6 +140,10 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
                 }
               }),
               _buildSubHeading(
+                icon: Icon(
+                  Icons.star,
+                  color: Colors.amber,
+                ),
                 title: 'Top Rated',
                 onTap: () =>
                     Navigator.pushNamed(context, TopRatedMoviesPage.ROUTE_NAME),
@@ -150,13 +167,19 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
     );
   }
 
-  Row _buildSubHeading({required String title, required Function() onTap}) {
+  Row _buildSubHeading(
+      {required Icon icon, required String title, required Function() onTap}) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(
-          title,
-          style: kHeading6,
+        Row(
+          children: [
+            icon,
+            Text(
+              title,
+              style: kHeading6,
+            ),
+          ],
         ),
         InkWell(
           onTap: onTap,

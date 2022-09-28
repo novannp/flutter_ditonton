@@ -4,7 +4,7 @@ import 'package:ditonton/domain/usecases/get_popular_tv.dart';
 import 'package:ditonton/domain/usecases/get_top_rated_tv.dart';
 import 'package:flutter/material.dart';
 
-import '../../domain/entities/tv.dart';
+import '../../domain/entities/tv/tv.dart';
 
 class TvListNotifier extends ChangeNotifier {
   var _popularTv = <Tv>[];

@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
 import 'package:ditonton/common/failure.dart';
 
-import '../entities/tv.dart';
-import '../entities/tv_detail.dart';
+import '../entities/tv/tv.dart';
+import '../entities/tv/tv_detail.dart';
 
 abstract class TvRepository {
   Future<Either<Failure, List<Tv>>> getPopularTv();

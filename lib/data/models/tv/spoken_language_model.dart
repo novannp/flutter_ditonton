@@ -1,4 +1,4 @@
-import 'package:ditonton/domain/entities/spoken_language.dart';
+import 'package:ditonton/domain/entities/tv/spoken_language.dart';
 import 'package:equatable/equatable.dart';
 
 class SpokenLanguageModel extends Equatable {

@@ -1,4 +1,4 @@
-import 'package:ditonton/domain/entities/te_episode_to_air.dart';
+import 'package:ditonton/domain/entities/tv/te_episode_to_air.dart';
 import 'package:equatable/equatable.dart';
 
 class TEpisodeToAirModel extends Equatable {

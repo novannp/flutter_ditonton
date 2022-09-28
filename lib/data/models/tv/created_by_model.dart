@@ -1,4 +1,4 @@
-import 'package:ditonton/domain/entities/created_by.dart';
+import 'package:ditonton/domain/entities/tv/created_by.dart';
 import 'package:equatable/equatable.dart';
 
 class CreatedByModel extends Equatable {

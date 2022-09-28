@@ -1,6 +1,5 @@
+import 'package:ditonton/domain/entities/tv/production_country.dart';
 import 'package:equatable/equatable.dart';
-
-import '../../domain/entities/production_country.dart';
 
 class ProductionCountryModel extends Equatable {
   ProductionCountryModel({

@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 
-import '../../domain/entities/season.dart';
+import '../../../domain/entities/tv/season.dart';
 
 class SeasonModel extends Equatable {
   SeasonModel({
@@ -22,8 +22,9 @@ class SeasonModel extends Equatable {
   final int? seasonNumber;
 
   factory SeasonModel.fromJson(Map<String, dynamic> json) => SeasonModel(
-        airDate:
-            json['air_date'] == null ? null : DateTime.parse(json["air_date"]),
+        airDate: json['air_date'] == null
+            ? DateTime.parse('2022-11-11')
+            : DateTime.parse(json["air_date"]),
         episodeCount: json["episode_count"],
         id: json["id"],
         name: json["name"],

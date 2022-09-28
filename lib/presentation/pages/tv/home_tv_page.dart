@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ditonton/common/constants.dart';
-import 'package:ditonton/domain/entities/tv.dart';
+import 'package:ditonton/domain/entities/tv/tv.dart';
 import 'package:ditonton/presentation/pages/about_page.dart';
 import 'package:ditonton/presentation/pages/watchlist_page.dart';
 import 'package:ditonton/common/state_enum.dart';
@@ -53,8 +53,9 @@ class _HomeTvPageState extends State<HomeTvPage> {
               },
             ),
             ListTile(
-              leading: Icon(Icons.movie),
+              leading: Icon(Icons.tv),
               title: Text('TV Series'),
+              key: Key('tvseries_btn'),
               onTap: () {
                 Navigator.pushNamedAndRemoveUntil(
                     context, '/home-tv', (route) => false);
@@ -94,9 +95,18 @@ class _HomeTvPageState extends State<HomeTvPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                'On The Air Now',
-                style: kHeading6,
+              Row(
+                children: [
+                  Icon(
+                    Icons.live_tv,
+                    color: Colors.amber,
+                  ),
+                  SizedBox(width: 7),
+                  Text(
+                    'On The Air Now',
+                    style: kHeading6,
+                  ),
+                ],
               ),
               Consumer<TvListNotifier>(builder: (context, data, child) {
                 final state = data.onTheAirTvState;
@@ -111,6 +121,10 @@ class _HomeTvPageState extends State<HomeTvPage> {
                 }
               }),
               _buildSubHeading(
+                icon: Icon(
+                  Icons.star,
+                  color: Colors.amber,
+                ),
                 title: 'Popular',
                 onTap: () =>
                     Navigator.pushNamed(context, PopularTvPage.ROUTE_NAME),
@@ -128,6 +142,10 @@ class _HomeTvPageState extends State<HomeTvPage> {
                 }
               }),
               _buildSubHeading(
+                icon: Icon(
+                  Icons.star,
+                  color: Colors.amber,
+                ),
                 title: 'Top Rated',
                 onTap: () =>
                     Navigator.pushNamed(context, TopRatedTvPage.ROUTE_NAME),
@@ -151,13 +169,19 @@ class _HomeTvPageState extends State<HomeTvPage> {
     );
   }
 
-  Row _buildSubHeading({required String title, required Function() onTap}) {
+  Row _buildSubHeading(
+      {required String title, required Icon icon, required Function() onTap}) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(
-          title,
-          style: kHeading6,
+        Row(
+          children: [
+            icon,
+            Text(
+              title,
+              style: kHeading6,
+            ),
+          ],
         ),
         InkWell(
           onTap: onTap,

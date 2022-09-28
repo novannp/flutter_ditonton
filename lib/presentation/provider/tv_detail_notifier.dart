@@ -1,4 +1,4 @@
-import 'package:ditonton/domain/entities/tv_detail.dart';
+import 'package:ditonton/domain/entities/tv/tv_detail.dart';
 import 'package:ditonton/domain/usecases/get_tv_detail.dart';
 import 'package:ditonton/domain/usecases/get_tv_recommendation.dart';
 import 'package:ditonton/domain/usecases/get_watchlist_tv_status.dart';
@@ -7,7 +7,7 @@ import 'package:ditonton/domain/usecases/save_tv_watchlist.dart';
 import 'package:flutter/material.dart';
 
 import '../../common/state_enum.dart';
-import '../../domain/entities/tv.dart';
+import '../../domain/entities/tv/tv.dart';
 
 class TvDetailNotifier extends ChangeNotifier {
   static const watchlistAddSuccessMessage = 'Added to Watchlist';

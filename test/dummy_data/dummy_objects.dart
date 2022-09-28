@@ -1,14 +1,15 @@
-import 'package:ditonton/data/models/movie_table.dart';
-import 'package:ditonton/data/models/tv_table.dart';
-import 'package:ditonton/domain/entities/created_by.dart';
+import 'package:ditonton/data/models/movie/movie_table.dart';
+import 'package:ditonton/data/models/tv/tv_table.dart';
+import 'package:ditonton/domain/entities/tv/created_by.dart';
 import 'package:ditonton/domain/entities/genre.dart';
-import 'package:ditonton/domain/entities/movie.dart';
-import 'package:ditonton/domain/entities/movie_detail.dart';
-import 'package:ditonton/domain/entities/production_country.dart';
-import 'package:ditonton/domain/entities/season.dart';
-import 'package:ditonton/domain/entities/spoken_language.dart';
-import 'package:ditonton/domain/entities/te_episode_to_air.dart';
-import 'package:ditonton/domain/entities/tv_detail.dart';
+import 'package:ditonton/domain/entities/movie/movie.dart';
+import 'package:ditonton/domain/entities/movie/movie_detail.dart';
+import 'package:ditonton/domain/entities/tv/production_country.dart';
+import 'package:ditonton/domain/entities/tv/season.dart';
+import 'package:ditonton/domain/entities/tv/spoken_language.dart';
+import 'package:ditonton/domain/entities/tv/te_episode_to_air.dart';
+import 'package:ditonton/domain/entities/tv/tv.dart';
+import 'package:ditonton/domain/entities/tv/tv_detail.dart';
 
 final testMovie = Movie(
   adult: false,
@@ -27,7 +28,24 @@ final testMovie = Movie(
   voteCount: 13507,
 );
 
+final testTv = Tv(
+    backdropPath: "backdropPath",
+    firstAirDate: DateTime.parse('2022-11-12'),
+    genreIds: [1, 2],
+    id: 1,
+    name: 'name',
+    originCountry: ['originCountry'],
+    originalLanguage: 'originalLanguage',
+    originalName: 'originalName',
+    overview: 'overview',
+    popularity: 1,
+    posterPath: 'posterPath',
+    voteAverage: 1,
+    voteCount: 1);
+
 final testMovieList = [testMovie];
+
+final testTvList = [testTv];
 
 final testTvDetail = TvDetail(
     adult: false,
@@ -119,6 +137,13 @@ final testMovieDetail = MovieDetail(
   title: 'title',
   voteAverage: 1,
   voteCount: 1,
+);
+
+final testTvWatchlist = Tv.watchList(
+  id: 1,
+  name: 'name',
+  posterPath: 'posterPath',
+  overview: 'overview',
 );
 
 final testWatchlistMovie = Movie.watchlist(

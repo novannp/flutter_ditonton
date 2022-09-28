@@ -1,4 +1,6 @@
-class CreatedBy {
+import 'package:equatable/equatable.dart';
+
+class CreatedBy extends Equatable {
   CreatedBy({
     required this.id,
     required this.creditId,
@@ -12,4 +14,13 @@ class CreatedBy {
   final String? name;
   final int? gender;
   final String? profilePath;
+
+  @override
+  List<Object?> get props => [
+        id,
+        creditId,
+        name,
+        gender,
+        profilePath,
+      ];
 }

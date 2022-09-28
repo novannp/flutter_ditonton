@@ -1,4 +1,6 @@
-class TEpisodeToAir {
+import 'package:equatable/equatable.dart';
+
+class TEpisodeToAir extends Equatable {
   TEpisodeToAir({
     required this.airDate,
     required this.episodeNumber,
@@ -26,4 +28,20 @@ class TEpisodeToAir {
   final String? stillPath;
   final double voteAverage;
   final int voteCount;
+
+  @override
+  List<Object?> get props => [
+        airDate,
+        episodeNumber,
+        id,
+        name,
+        overview,
+        productionCode,
+        runtime,
+        seasonNumber,
+        showId,
+        stillPath,
+        voteAverage,
+        voteCount,
+      ];
 }

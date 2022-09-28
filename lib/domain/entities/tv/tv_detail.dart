@@ -2,15 +2,16 @@
 //
 //     final tvDetailResponse = tvDetailResponseFromJson(jsonString);
 
-import 'package:ditonton/domain/entities/production_country.dart';
+import 'package:ditonton/domain/entities/tv/production_country.dart';
+import 'package:equatable/equatable.dart';
 
 import 'created_by.dart';
-import 'genre.dart';
+import '../genre.dart';
 import 'season.dart';
 import 'spoken_language.dart';
 import 'te_episode_to_air.dart';
 
-class TvDetail {
+class TvDetail extends Equatable {
   TvDetail({
     required this.adult,
     required this.backdropPath,
@@ -74,4 +75,37 @@ class TvDetail {
   final String type;
   final double voteAverage;
   final int voteCount;
+
+  @override
+  List<Object?> get props => [
+        adult,
+        backdropPath,
+        createdBy,
+        episodeRunTime,
+        firstAirDate,
+        genres,
+        homepage,
+        id,
+        inProduction,
+        languages,
+        lastAirDate,
+        lastEpisodeToAir,
+        name,
+        nextEpisodeToAir,
+        numberOfEpisodes,
+        numberOfSeasons,
+        originCountry,
+        originalLanguage,
+        originalName,
+        overview,
+        popularity,
+        posterPath,
+        seasons,
+        spokenLanguages,
+        status,
+        tagline,
+        type,
+        voteAverage,
+        voteCount,
+      ];
 }

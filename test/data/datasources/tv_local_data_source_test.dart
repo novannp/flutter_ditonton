@@ -21,7 +21,7 @@ void main() {
           .thenAnswer((_) async => 1);
       final result = await dataSource.insertTvWatchlist(testTvTable);
 
-      expect(result, 'added to watchlist');
+      expect(result, 'Added to Watchlist');
     });
 
     test('should throw DatabaseException when insert to database is failed',
@@ -42,7 +42,7 @@ void main() {
           .thenAnswer((_) async => 1);
 
       final result = await dataSource.removeTvWatchlist(testTvTable);
-      expect(result, 'Removed ');
+      expect(result, 'Removed from Watchlist');
     });
     test('should throw DatabaseException when remove from database is failed',
         () async {

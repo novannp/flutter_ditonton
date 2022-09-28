@@ -1,13 +1,14 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ditonton/common/constants.dart';
 import 'package:ditonton/domain/entities/genre.dart';
-import 'package:ditonton/domain/entities/tv_detail.dart';
+import 'package:ditonton/domain/entities/tv/tv_detail.dart';
 import 'package:ditonton/common/state_enum.dart';
+import 'package:ditonton/presentation/pages/tv/seasons_detail_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:provider/provider.dart';
 
-import '../../../domain/entities/tv.dart';
+import '../../../domain/entities/tv/tv.dart';
 import '../../provider/tv_detail_notifier.dart';
 
 class TvDetailPage extends StatefulWidget {
@@ -152,10 +153,13 @@ class DetailContent extends StatelessWidget {
                               'Category : ' + _showGenres(tvDetail.genres),
                             ),
                             SizedBox(height: 2),
-                            Text(
-                              'Runtime : ' +
-                                  _showDuration(tvDetail.episodeRunTime[0]),
-                            ),
+                            tvDetail.episodeRunTime.isNotEmpty
+                                ? Text(
+                                    'Episode Run Time : ' +
+                                        tvDetail.episodeRunTime[0].toString() +
+                                        ' minutes',
+                                  )
+                                : SizedBox(),
                             SizedBox(height: 2),
                             Text('Ratings :'),
                             buildRatingBar(),
@@ -200,48 +204,60 @@ class DetailContent extends StatelessWidget {
                                       scrollDirection: Axis.horizontal,
                                       itemCount: tvDetail.seasons.length,
                                       itemBuilder: (context, int index) {
-                                        return Container(
-                                          margin:
-                                              const EdgeInsets.only(right: 8),
-                                          child: Column(
-                                            children: [
-                                              tvDetail.seasons[index]
-                                                          .posterPath !=
-                                                      null
-                                                  ? CircleAvatar(
-                                                      radius: 30,
-                                                      foregroundColor:
-                                                          Colors.amber,
-                                                      backgroundImage:
-                                                          CachedNetworkImageProvider(
-                                                              'https://image.tmdb.org/t/p/w500${tvDetail.seasons[index].posterPath}'),
-                                                    )
-                                                  : SizedBox(
-                                                      height: 60,
-                                                      width: 60,
-                                                      child: Center(
-                                                          child:
-                                                              Text('no image')),
-                                                    ),
-                                              SizedBox(
-                                                width: 80,
-                                                child: Text(
-                                                  tvDetail.seasons[index]
-                                                          .name ??
-                                                      '-',
-                                                  maxLines: 1,
-                                                  textAlign: TextAlign.center,
-                                                  overflow:
-                                                      TextOverflow.ellipsis,
-                                                ),
-                                              ),
-                                              Text(
-                                                "Episode " +
+                                        return InkWell(
+                                          onTap: () {
+                                            Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        SeasonsDetailPage(
+                                                            season: tvDetail
+                                                                    .seasons[
+                                                                index])));
+                                          },
+                                          child: Container(
+                                            margin:
+                                                const EdgeInsets.only(right: 8),
+                                            child: Column(
+                                              children: [
+                                                tvDetail.seasons[index]
+                                                            .posterPath !=
+                                                        null
+                                                    ? CircleAvatar(
+                                                        radius: 30,
+                                                        foregroundColor:
+                                                            Colors.amber,
+                                                        backgroundImage:
+                                                            CachedNetworkImageProvider(
+                                                                'https://image.tmdb.org/t/p/w500${tvDetail.seasons[index].posterPath}'),
+                                                      )
+                                                    : SizedBox(
+                                                        height: 60,
+                                                        width: 60,
+                                                        child: Center(
+                                                            child: Text(
+                                                                'no image')),
+                                                      ),
+                                                SizedBox(
+                                                  width: 80,
+                                                  child: Text(
                                                     tvDetail.seasons[index]
-                                                        .episodeCount
-                                                        .toString(),
-                                              ),
-                                            ],
+                                                            .name ??
+                                                        '-',
+                                                    maxLines: 1,
+                                                    textAlign: TextAlign.center,
+                                                    overflow:
+                                                        TextOverflow.ellipsis,
+                                                  ),
+                                                ),
+                                                Text(
+                                                  "Episode " +
+                                                      tvDetail.seasons[index]
+                                                          .episodeCount
+                                                          .toString(),
+                                                ),
+                                              ],
+                                            ),
                                           ),
                                         );
                                       },
