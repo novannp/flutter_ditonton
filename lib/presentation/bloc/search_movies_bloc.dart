@@ -11,6 +11,7 @@ part 'search_movies_state.dart';
 
 class SearchMoviesBloc extends Bloc<SearchMoviesEvent, SearchMoviesState> {
   final SearchMovies _searchMovies;
+
   SearchMoviesBloc(this._searchMovies) : super(SearchMovieEmpty()) {
     on<OnQueryChanged>(
       (event, emit) async {
