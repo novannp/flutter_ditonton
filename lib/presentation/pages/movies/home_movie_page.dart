@@ -4,13 +4,15 @@ import 'package:ditonton/domain/entities/movie/movie.dart';
 import 'package:ditonton/presentation/bloc/movie/movies_bloc.dart';
 import 'package:ditonton/presentation/pages/about_page.dart';
 import 'package:ditonton/presentation/pages/movies/movie_detail_page.dart';
-import 'package:ditonton/presentation/pages/movies/top_rated_movies_page.dart';
 import 'package:ditonton/presentation/pages/watchlist_page.dart';
 import 'package:ditonton/presentation/pages/movies/search_movie_page.dart';
+import 'package:ditonton/presentation/widgets/listview_simmer.dart';
+import 'package:ditonton/presentation/widgets/simmer_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'popular_movies_page.dart';
+import 'top_rated_movies_page.dart';
 
 class HomeMoviePage extends StatefulWidget {
   @override
@@ -111,9 +113,7 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
               BlocBuilder<NowPlayingMovies, MovieBlocState>(
                   builder: (context, state) {
                 if (state is MoviesLoading) {
-                  return Center(
-                    child: CircularProgressIndicator(),
-                  );
+                  return ListViewSimmer();
                 } else if (state is MoviesHasData) {
                   return MovieList(state.movies);
                 } else if (state is MoviesHasError) {
@@ -136,7 +136,7 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
                   builder: (context, state) {
                 if (state is MoviesLoading) {
                   return Center(
-                    child: CircularProgressIndicator(),
+                    child: ListViewSimmer(),
                   );
                 } else if (state is MoviesHasData) {
                   return MovieList(state.movies);
@@ -162,9 +162,7 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
               BlocBuilder<TopRatedMovies, MovieBlocState>(
                   builder: (context, state) {
                 if (state is MoviesLoading) {
-                  return Center(
-                    child: CircularProgressIndicator(),
-                  );
+                  return ListViewSimmer();
                 }
                 if (state is MoviesHasData) {
                   return MovieList(state.movies);
@@ -241,7 +239,7 @@ class MovieList extends StatelessWidget {
                 child: CachedNetworkImage(
                   imageUrl: '$BASE_IMAGE_URL${movie.posterPath}',
                   placeholder: (context, url) => Center(
-                    child: CircularProgressIndicator(),
+                    child: ShimmerCard(),
                   ),
                   errorWidget: (context, url, error) => Icon(Icons.error),
                 ),
