@@ -51,9 +51,13 @@ final locator = GetIt.instance;
 void init() {
   // bloc
   locator.registerFactory(() => SearchMoviesBloc(locator()));
-  locator.registerFactory(() => NowPlayingMovies(locator()));
-  locator.registerFactory(() => PopularMovies(locator()));
-  locator.registerFactory(() => TopRatedMovies(locator()));
+  locator.registerFactory(() => NowPlayingMoviesBloc(locator()));
+  locator.registerFactory(() => PopularMoviesBloc(locator()));
+  locator.registerFactory(() => TopRatedMoviesBloc(locator()));
+  locator.registerFactory(() => DetailMovieBloc(locator()));
+  locator.registerFactory(() => RecommendationMovieBloc(locator()));
+  locator.registerFactory(
+      () => WatchListBloc(locator(), locator(), locator(), locator()));
   // provider
   locator.registerFactory(
     () => MovieListNotifier(

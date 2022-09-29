@@ -24,9 +24,9 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
   void initState() {
     super.initState();
     Future.microtask(() {
-      context.read<NowPlayingMovies>().add(FetchNowPlayingMovies());
-      context.read<PopularMovies>().add(FetchPopularMovies());
-      context.read<TopRatedMovies>().add(FetchTopRatedMovies());
+      context.read<NowPlayingMoviesBloc>().add(FetchNowPlayingMovies());
+      context.read<PopularMoviesBloc>().add(FetchPopularMovies());
+      context.read<TopRatedMoviesBloc>().add(FetchTopRatedMovies());
     });
   }
 
@@ -110,7 +110,7 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
                   ),
                 ],
               ),
-              BlocBuilder<NowPlayingMovies, MovieBlocState>(
+              BlocBuilder<NowPlayingMoviesBloc, MovieBlocState>(
                   builder: (context, state) {
                 if (state is MoviesLoading) {
                   return ListViewSimmer();
@@ -132,7 +132,7 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
                 onTap: () =>
                     Navigator.pushNamed(context, PopularMoviesPage.ROUTE_NAME),
               ),
-              BlocBuilder<PopularMovies, MovieBlocState>(
+              BlocBuilder<PopularMoviesBloc, MovieBlocState>(
                   builder: (context, state) {
                 if (state is MoviesLoading) {
                   return Center(
@@ -159,7 +159,7 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
                 onTap: () =>
                     Navigator.pushNamed(context, TopRatedMoviesPage.ROUTE_NAME),
               ),
-              BlocBuilder<TopRatedMovies, MovieBlocState>(
+              BlocBuilder<TopRatedMoviesBloc, MovieBlocState>(
                   builder: (context, state) {
                 if (state is MoviesLoading) {
                   return ListViewSimmer();

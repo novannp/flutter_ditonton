@@ -20,3 +20,38 @@ class FetchDetailMovie extends MovieBlocEvent {
   @override
   List<Object> get props => [id];
 }
+
+class FetchMoviesRecommendation extends MovieBlocEvent {
+  final int id;
+  const FetchMoviesRecommendation(this.id);
+
+  @override
+  List<Object> get props => [id];
+}
+
+class FetchWatchlistMovies extends MovieBlocEvent {}
+
+class SaveWatchistMovies extends MovieBlocEvent {
+  final MovieDetail movie;
+
+  SaveWatchistMovies(this.movie);
+  @override
+  List<Object> get props => [movie];
+}
+
+class RemoveWatchlistMovies extends MovieBlocEvent {
+  final MovieDetail movie;
+
+  RemoveWatchlistMovies(this.movie);
+  @override
+  List<Object> get props => [movie];
+}
+
+class LoadWatchlistMovieStatus extends MovieBlocEvent {
+  final int id;
+
+  LoadWatchlistMovieStatus(this.id);
+
+  @override
+  List<Object> get props => [id];
+}
