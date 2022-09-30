@@ -3,14 +3,17 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:async' as _i5;
+import 'dart:async' as _i6;
 
-import 'package:core/domain/entities/movie/movie.dart' as _i7;
-import 'package:core/domain/repositories/movie_repository.dart' as _i2;
-import 'package:core/utils/failure.dart' as _i6;
+import 'package:core/utils/failure.dart' as _i7;
 import 'package:dartz/dartz.dart' as _i3;
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:search/domain/usecases/search_movies.dart' as _i4;
+import 'package:movies/domain/entities/movie/movie.dart' as _i8;
+import 'package:movies/domain/repositories/movie_repository.dart' as _i2;
+import 'package:search/domain/usecases/search_movies.dart' as _i5;
+import 'package:search/domain/usecases/search_tv.dart' as _i9;
+import 'package:tv_series/domain/entities/tv/tv.dart' as _i10;
+import 'package:tv_series/domain/repositories/tv_repository.dart' as _i4;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -44,10 +47,20 @@ class _FakeEither_1<L, R> extends _i1.SmartFake implements _i3.Either<L, R> {
         );
 }
 
+class _FakeTvRepository_2 extends _i1.SmartFake implements _i4.TvRepository {
+  _FakeTvRepository_2(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
+}
+
 /// A class which mocks [SearchMovies].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockSearchMovies extends _i1.Mock implements _i4.SearchMovies {
+class MockSearchMovies extends _i1.Mock implements _i5.SearchMovies {
   MockSearchMovies() {
     _i1.throwOnMissingStub(this);
   }
@@ -61,19 +74,53 @@ class MockSearchMovies extends _i1.Mock implements _i4.SearchMovies {
         ),
       ) as _i2.MovieRepository);
   @override
-  _i5.Future<_i3.Either<_i6.Failure, List<_i7.Movie>>> execute(String? query) =>
+  _i6.Future<_i3.Either<_i7.Failure, List<_i8.Movie>>> execute(String? query) =>
       (super.noSuchMethod(
         Invocation.method(
           #execute,
           [query],
         ),
-        returnValue: _i5.Future<_i3.Either<_i6.Failure, List<_i7.Movie>>>.value(
-            _FakeEither_1<_i6.Failure, List<_i7.Movie>>(
+        returnValue: _i6.Future<_i3.Either<_i7.Failure, List<_i8.Movie>>>.value(
+            _FakeEither_1<_i7.Failure, List<_i8.Movie>>(
           this,
           Invocation.method(
             #execute,
             [query],
           ),
         )),
-      ) as _i5.Future<_i3.Either<_i6.Failure, List<_i7.Movie>>>);
+      ) as _i6.Future<_i3.Either<_i7.Failure, List<_i8.Movie>>>);
+}
+
+/// A class which mocks [SearchTv].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockSearchTv extends _i1.Mock implements _i9.SearchTv {
+  MockSearchTv() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i4.TvRepository get repository => (super.noSuchMethod(
+        Invocation.getter(#repository),
+        returnValue: _FakeTvRepository_2(
+          this,
+          Invocation.getter(#repository),
+        ),
+      ) as _i4.TvRepository);
+  @override
+  _i6.Future<_i3.Either<_i7.Failure, List<_i10.Tv>>> execute(String? query) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #execute,
+          [query],
+        ),
+        returnValue: _i6.Future<_i3.Either<_i7.Failure, List<_i10.Tv>>>.value(
+            _FakeEither_1<_i7.Failure, List<_i10.Tv>>(
+          this,
+          Invocation.method(
+            #execute,
+            [query],
+          ),
+        )),
+      ) as _i6.Future<_i3.Either<_i7.Failure, List<_i10.Tv>>>);
 }

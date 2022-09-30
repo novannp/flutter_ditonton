@@ -13,6 +13,10 @@ dependencies:
     sdk: flutter
   core:
     path: ../core
+  movies:
+    path: ../movies
+  tv_series:
+    path: ../tv_series
   flutter_bloc: ^8.1.1
   dartz: ^0.10.0-nullsafety.2
   equatable: ^2.0.2

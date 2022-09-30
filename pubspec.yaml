@@ -30,6 +30,10 @@ dependencies:
     path: search
   core:
     path: core
+  movies:
+    path: movies
+  tv_series:
+    path: tv_series
   flutter_bloc: ^8.1.1
   get_it: ^7.1.3
   google_fonts: ^3.0.1

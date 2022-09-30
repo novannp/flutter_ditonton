@@ -1,11 +1,11 @@
 import 'package:bloc/bloc.dart';
-import 'package:core/domain/entities/movie/movie.dart';
-import 'package:core/domain/entities/tv/tv.dart';
+import 'package:movies/domain/entities/movie/movie.dart';
 
 import 'package:equatable/equatable.dart';
 
 import 'package:rxdart/rxdart.dart';
 import 'package:search/domain/usecases/search_tv.dart';
+import 'package:tv_series/domain/entities/tv/tv.dart';
 
 import '../../domain/usecases/search_movies.dart';
 

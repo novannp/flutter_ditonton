@@ -1,17 +1,16 @@
 import 'package:core/core.dart';
-import 'package:core/presentation/bloc/movie/movies_bloc.dart';
-import 'package:core/presentation/pages/about_page.dart';
-import 'package:core/presentation/pages/tv/home_tv_page.dart';
-import 'package:core/presentation/pages/movies/home_movie_page.dart';
-import 'package:core/presentation/pages/movies/movie_detail_page.dart';
-import 'package:core/presentation/pages/movies/popular_movies_page.dart';
-import 'package:core/presentation/pages/movies/top_rated_movies_page.dart';
-import 'package:core/presentation/pages/watchlist_page.dart';
+import 'package:movies/presentation/bloc/movie/movies_bloc.dart';
+import 'package:tv_series/presentation/bloc/tv/tv_bloc.dart';
+import 'package:tv_series/presentation/pages/tv/home_tv_page.dart';
+import 'package:movies/presentation/pages/movies/home_movie_page.dart';
+import 'package:movies/presentation/pages/movies/movie_detail_page.dart';
+import 'package:movies/presentation/pages/movies/popular_movies_page.dart';
+import 'package:movies/presentation/pages/movies/top_rated_movies_page.dart';
 
-import 'package:core/presentation/pages/tv/popular_tv_page.dart';
+import 'package:tv_series/presentation/pages/tv/popular_tv_page.dart';
 
-import 'package:core/presentation/pages/tv/top_rated_page.dart';
-import 'package:core/presentation/pages/tv/tv_detail_page.dart';
+import 'package:tv_series/presentation/pages/tv/top_rated_page.dart';
+import 'package:tv_series/presentation/pages/tv/tv_detail_page.dart';
 
 import 'package:core/utils/utils.dart';
 import 'package:flutter/cupertino.dart';
@@ -55,16 +54,29 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         title: 'Ditonton',
-        theme: ThemeData.dark().copyWith(
-          useMaterial3: true,
-          colorScheme: kColorScheme,
-          textTheme: kTextTheme,
-          scaffoldBackgroundColor: kColorScheme.background,
-          drawerTheme: DrawerThemeData(
+        theme: ThemeData(
+          colorSchemeSeed: Colors.deepPurple,
+          appBarTheme: AppBarTheme(
+            backgroundColor: Colors.deepPurple,
             elevation: 0,
-            backgroundColor: kColorScheme.background,
+          ),
+          elevatedButtonTheme: ElevatedButtonThemeData(
+            style: ElevatedButton.styleFrom(
+              primary: Colors.deepPurple,
+              onPrimary: Colors.white,
+            ),
           ),
         ),
+        // theme: ThemeData.dark().copyWith(
+        //   useMaterial3: true,
+        //   colorScheme: kColorScheme,
+        //   textTheme: kTextTheme,
+        //   scaffoldBackgroundColor: kColorScheme.background,
+        //   drawerTheme: DrawerThemeData(
+        //     elevation: 0,
+        //     backgroundColor: kColorScheme.background,
+        //   ),
+        // ),
         home: HomeMoviePage(),
         navigatorObservers: [routeObserver],
         onGenerateRoute: (RouteSettings settings) {

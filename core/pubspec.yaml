@@ -18,6 +18,10 @@ dependencies:
   dartz: ^0.10.0-nullsafety.2
   search:
     path: ../search
+  movies:
+    path: ../movies
+  tv_series:
+    path: ../tv_series
     
   flutter_bloc: ^8.1.1
   flutter_rating_bar: ^4.0.0

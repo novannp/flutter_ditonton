@@ -1,0 +1,114 @@
+{
+    "adult": false,
+    "backdrop_path": "backdrop_path",
+    "created_by": [
+        {
+            "id": 237053,
+            "credit_id": "1",
+            "name": "name",
+            "gender": 2,
+            "profile_path": "profile_path"
+        }
+    ],
+    "episode_run_time": [
+        62
+    ],
+    "first_air_date": "2022-08-21",
+    "genres": [
+        {
+            "id": 10765,
+            "name": "Sci-Fi & Fantasy"
+        }
+    ],
+    "homepage": "homepage",
+    "id": 1,
+    "in_production": true,
+    "languages": [
+        "en"
+    ],
+    "last_air_date": "2022-09-11",
+    "last_episode_to_air": {
+        "air_date": "2022-09-11",
+        "episode_number": 4,
+        "id": 1,
+        "name": "name",
+        "overview": "overview",
+        "production_code": "1",
+        "runtime": 63,
+        "season_number": 1,
+        "show_id": 1,
+        "still_path": "still",
+        "vote_average": 1,
+        "vote_count": 1
+    },
+    "name": "name",
+    "next_episode_to_air": {
+        "air_date": "2022-09-11",
+        "episode_number": 4,
+        "id": 1,
+        "name": "name",
+        "overview": "overview",
+        "production_code": "1",
+        "runtime": 63,
+        "season_number": 1,
+        "show_id": 1,
+        "still_path": "still",
+        "vote_average": 1,
+        "vote_count": 1
+    },
+    "networks": [
+        {
+            "id": 49,
+            "name": "HBO",
+            "logo_path": "/tuomPhY2UtuPTqqFnKMVHvSb724.png",
+            "origin_country": "US"
+        }
+    ],
+    "number_of_episodes": 10,
+    "number_of_seasons": 1,
+    "origin_country": [
+        "US"
+    ],
+    "original_language": "en",
+    "original_name": "name",
+    "overview": "overview",
+    "popularity": 9289.748,
+    "poster_path": "/z2yahl2uefxDCl0nogcRBstwruJ.jpg",
+    "production_companies": [
+        {
+            "id": 3268,
+            "logo_path": "/tuomPhY2UtuPTqqFnKMVHvSb724.png",
+            "name": "HBO",
+            "origin_country": "US"
+        }
+    ],
+    "production_countries": [
+        {
+            "iso_3166_1": "US",
+            "name": "United States of America"
+        }
+    ],
+    "seasons": [
+        {
+            "air_date": "2022-08-21",
+            "episode_count": 10,
+            "id": 134965,
+            "name": "Season 1",
+            "overview": "",
+            "poster_path": "poster",
+            "season_number": 1
+        }
+    ],
+    "spoken_languages": [
+        {
+            "english_name": "English",
+            "iso_639_1": "en",
+            "name": "English"
+        }
+    ],
+    "status": "Returning Series",
+    "tagline": "Fire and blood.",
+    "type": "Scripted",
+    "vote_average": 8.7,
+    "vote_count": 1090
+}

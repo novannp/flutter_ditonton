@@ -1,12 +1,12 @@
-import 'package:core/core.dart';
 import 'package:core/presentation/widgets/list_card_shimmer.dart';
-import 'package:core/presentation/widgets/tv_card_list.dart';
+import 'package:tv_series/presentation/widgets/tv_card_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:movies/presentation/bloc/movie/movies_bloc.dart';
+import 'package:movies/presentation/widgets/movie_card_list.dart';
+import 'package:tv_series/presentation/bloc/tv/tv_bloc.dart';
 
 import '../../utils/utils.dart';
-import '../bloc/movie/movies_bloc.dart';
-import '../widgets/movie_card_list.dart';
 
 class WatchlistPage extends StatefulWidget {
   static const ROUTE_NAME = '/watchlist';
