@@ -1,4 +1,7 @@
 import 'package:core/core.dart';
+import 'package:ditonton/firebase_options.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:movies/presentation/bloc/movie/movies_bloc.dart';
 import 'package:tv_series/presentation/bloc/tv/tv_bloc.dart';
 import 'package:tv_series/presentation/pages/tv/home_tv_page.dart';
@@ -13,7 +16,6 @@ import 'package:tv_series/presentation/pages/tv/top_rated_page.dart';
 import 'package:tv_series/presentation/pages/tv/tv_detail_page.dart';
 
 import 'package:core/utils/utils.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
@@ -24,7 +26,9 @@ import 'injection.dart' as di;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  SslPinningHelper.initializing();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
+  await SslPinningHelper.initializing();
   di.init();
 
   runApp(MyApp());

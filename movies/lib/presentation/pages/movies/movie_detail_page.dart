@@ -170,8 +170,12 @@ class DetailContent extends StatelessWidget {
                                     message ==
                                         WatchListBloc
                                             .watchlistRemoveSuccessMessage) {
-                                  ScaffoldMessenger.of(context).showSnackBar(
-                                      SnackBar(content: Text(message)));
+                                  ScaffoldMessenger.of(context)
+                                      .showSnackBar(SnackBar(
+                                          duration: Duration(milliseconds: 500),
+                                          content: Text(
+                                            message,
+                                          )));
                                   //LOAD NEW STATUS
                                   BlocProvider.of<WatchListBloc>(context)
                                       .add(LoadWatchlistMovieStatus(movie.id));

@@ -166,7 +166,9 @@ class DetailContent extends StatelessWidget {
                                         WatchlistTvBloc
                                             .watchlistRemoveSuccessMessage) {
                                   ScaffoldMessenger.of(context).showSnackBar(
-                                      SnackBar(content: Text(message)));
+                                      SnackBar(
+                                          duration: Duration(milliseconds: 500),
+                                          content: Text(message)));
                                   // Load new status
                                   BlocProvider.of<WatchlistTvBloc>(context)
                                       .add(LoadWatchlistTvStatus(tvDetail.id));
