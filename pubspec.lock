@@ -114,7 +114,7 @@ packages:
     source: hosted
     version: "8.4.0"
   cached_network_image:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: cached_network_image
       url: "https://pub.dartlang.org"
@@ -183,6 +183,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.0.2"
+  core:
+    dependency: "direct main"
+    description:
+      path: core
+      relative: true
+    source: path
+    version: "0.0.1"
   coverage:
     dependency: transitive
     description:
@@ -292,7 +299,7 @@ packages:
     source: sdk
     version: "0.0.0"
   flutter_rating_bar:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: flutter_rating_bar
       url: "https://pub.dartlang.org"
@@ -586,6 +593,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.27.5"
+  search:
+    dependency: "direct main"
+    description:
+      path: search
+      relative: true
+    source: path
+    version: "0.0.1"
   shelf:
     dependency: transitive
     description:
@@ -615,7 +629,7 @@ packages:
     source: hosted
     version: "1.0.2"
   shimmer:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: shimmer
       url: "https://pub.dartlang.org"
@@ -655,7 +669,7 @@ packages:
     source: hosted
     version: "1.8.2"
   sqflite:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: sqflite
       url: "https://pub.dartlang.org"
@@ -837,5 +851,5 @@ packages:
     source: hosted
     version: "3.1.1"
 sdks:
-  dart: ">=2.17.0 <3.0.0"
+  dart: ">=2.17.6 <3.0.0"
   flutter: ">=3.0.0"
