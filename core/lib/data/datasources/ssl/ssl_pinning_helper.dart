@@ -17,7 +17,10 @@ class SslPinningHelper {
 
   static Future<IOClient> createIoClient() async {
     final context = SecurityContext(withTrustedRoots: false);
-    final cert = await rootBundle.load('assets/certificates.pem');
+    final cert = await rootBundle.load('assets/certificate.pem');
+
+    ///TEST SSL
+    // final cert = await rootBundle.load('assets/google_cert_test.pem');
     final httpClient = HttpClient(context: context);
 
     context.setTrustedCertificatesBytes(cert.buffer.asUint8List());

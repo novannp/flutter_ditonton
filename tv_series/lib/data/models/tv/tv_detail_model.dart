@@ -44,7 +44,7 @@ class TvDetailResponse extends Equatable {
   });
 
   final bool adult;
-  final String backdropPath;
+  final String? backdropPath;
   final List<CreatedByModel> createdBy;
   final List<int> episodeRunTime;
   final DateTime firstAirDate;
@@ -122,7 +122,7 @@ class TvDetailResponse extends Equatable {
   TvDetail toEntity() {
     return TvDetail(
       adult: adult,
-      backdropPath: backdropPath,
+      backdropPath: backdropPath ?? '',
       createdBy: createdBy.map((e) => e.toEntity()).toList(),
       episodeRunTime: episodeRunTime,
       firstAirDate: firstAirDate,

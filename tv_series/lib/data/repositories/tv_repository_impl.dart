@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:core/utils/exception.dart';
 import 'package:core/utils/failure.dart';
 import 'package:dartz/dartz.dart';
@@ -26,6 +28,8 @@ class TvRepositoryImpl implements TvRepository {
       return Left(ServerFailure(''));
     } on ConnectionFailure {
       return Left(ConnectionFailure('Failed to connect to the network'));
+    } on TlsException {
+      return Left(SSLFailure('CERTIFICATE_VERIFY_FAILED'));
     }
   }
 
@@ -38,6 +42,8 @@ class TvRepositoryImpl implements TvRepository {
       return Left(ServerFailure(''));
     } on ConnectionFailure {
       return Left(ConnectionFailure('Failed to connect to the network'));
+    } on TlsException {
+      return Left(SSLFailure('CERTIFICATE_VERIFY_FAILED'));
     }
   }
 
@@ -50,6 +56,8 @@ class TvRepositoryImpl implements TvRepository {
       return Left(ServerFailure(''));
     } on ConnectionFailure {
       return Left(ConnectionFailure('Failed to connect to the network'));
+    } on TlsException {
+      return Left(SSLFailure('CERTIFICATE_VERIFY_FAILED'));
     }
   }
 
@@ -62,6 +70,8 @@ class TvRepositoryImpl implements TvRepository {
       return Left(ServerFailure(''));
     } on ConnectionFailure {
       return Left(ConnectionFailure('Failed to connect to the network'));
+    } on TlsException {
+      return Left(SSLFailure('CERTIFICATE_VERIFY_FAILED'));
     }
   }
 
@@ -74,6 +84,8 @@ class TvRepositoryImpl implements TvRepository {
       return Left(ServerFailure(''));
     } on ConnectionFailure {
       return Left(ConnectionFailure('Failed to connect to the network'));
+    } on TlsException {
+      return Left(SSLFailure('CERTIFICATE_VERIFY_FAILED'));
     }
   }
 
@@ -86,6 +98,8 @@ class TvRepositoryImpl implements TvRepository {
       return Left(ServerFailure(''));
     } on ConnectionFailure {
       return Left(ConnectionFailure('Failed to connect to the network'));
+    } on TlsException {
+      return Left(SSLFailure('CERTIFICATE_VERIFY_FAILED'));
     }
   }
 
